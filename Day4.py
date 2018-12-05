@@ -1,6 +1,6 @@
 from inputFileReader import readFile
 import datetime
-day4_list = readFile("Input_Files/Day_4_1.txt")
+day4_list = readFile("Input_Files/Day4_1.txt")
 day4_list.sort()
 
 def splitString(line):
