@@ -1,4 +1,4 @@
-from inputFileReader import readFile
+from inputFileReader import readFile, solutionPrintOut
 
 day2_list = readFile("Input_Files/Day2_1.txt")
 
@@ -22,8 +22,7 @@ for line in day2_list:
         if line.count(letter) == 3:
             num3s = num3s + 1
             break
-
-print("Result Day 2 part a: " + str(num2s*num3s))
+solutionPrintOut("2", "A", str(num2s*num3s))
 
 ## DAY 2 PART B ##
 
@@ -38,4 +37,4 @@ for o_line_index in range(0, len(day2_list)):
             n_line = day2_list[n_line_index]
             n_line_removed = n_line[:i] + n_line[i+1:]
             if (o_line_removed == n_line_removed):
-                print(n_line_removed)
+                solutionPrintOut("2", "B", str(n_line_removed))

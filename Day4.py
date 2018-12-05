@@ -1,4 +1,4 @@
-from inputFileReader import readFile
+from inputFileReader import readFile, solutionPrintOut
 import datetime
 day4_list = readFile("Input_Files/Day4_1.txt")
 day4_list.sort()
@@ -43,8 +43,6 @@ mostAsleepGuard = 0
 for key, value in guards.items():
     if value == max(guards.values()):
         mostAsleepGuard = key
-print("Most asleep guard is #" + mostAsleepGuard + " with " + str(max(guards.values())) + " minutes slept.")
-
 currGuard = False
 minsAsleep = []
 for line in day4_list:
@@ -61,12 +59,9 @@ for line in day4_list:
             currGuard = True
         else:
             currGuard = False
-
-
 minSol = max(set(minsAsleep), key=minsAsleep.count)
-print("Most common minute asleep is minute " + str(minSol))
-print("Part A Solution (guard # * minute) = " + str(int(mostAsleepGuard) * minSol))
-print("")
+solutionPrintOut("4", "A", str(int(mostAsleepGuard) * minSol))
+
 ## DAY 4 PART B ##
 guards2 = {}
 for line in day4_list:
@@ -97,5 +92,4 @@ for key, value in guards2.items():
             mostOccurencesKey = key
             mostOccurencesMinute = mostComMin
 
-print(str(mostOccurencesKey) + ": " + str(mostOccurencesMinute) + ": " + str(mostOccurencesValue))
-print("Part B Solution: " + str(int(mostOccurencesKey) * mostOccurencesMinute))
+solutionPrintOut("4", "B", str(int(mostOccurencesKey) * mostOccurencesMinute))

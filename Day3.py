@@ -1,4 +1,4 @@
-from inputFileReader import readFile
+from inputFileReader import readFile, solutionPrintOut
 import numpy
 numpy.set_printoptions(threshold=numpy.inf)
 
@@ -21,13 +21,12 @@ clothMatrix = numpy.zeros((n,n), dtype=object)
 for line in day3_list:
     x, y, lenX, lenY = getDataFromLine(line)
     clothMatrix[x:x+lenX,y:y+lenY] += 1
-
-print(numpy.count_nonzero(clothMatrix > 1))
+solutionPrintOut("3", "A", str(numpy.count_nonzero(clothMatrix > 1)))
 
 ## DAY 3 PART B ##
 for line in day3_list:
     x, y, lenX, lenY = getDataFromLine(line)
     if numpy.count_nonzero( clothMatrix[x:x+lenX,y:y+lenY] > 1 ) == 0:
-        print(line)
+        solutionPrintOut("3", "B", str(line[1:5]))
 
 

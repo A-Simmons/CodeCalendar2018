@@ -1,4 +1,4 @@
-from inputFileReader import readFile
+from inputFileReader import readFile, solutionPrintOut
 from string import ascii_lowercase
 day5_string = readFile("Input_Files/Day5_1.txt")[0]
 
@@ -15,8 +15,7 @@ while True:
         break
     else:
         count = len(string)
-
-print("Solution Part A: " + str(count))
+solutionPrintOut("5", "A", str(count))
 
 ## PART B ##
 lowestCount = len(day5_string)
@@ -37,6 +36,4 @@ for l in ascii_lowercase:
             count = len(string)
     if count < lowestCount:
         lowestCount = count
-
-print("Solution Part B: " + str(lowestCount))
-
+solutionPrintOut("5", "B", str(lowestCount))
